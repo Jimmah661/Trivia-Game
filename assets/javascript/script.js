@@ -8,6 +8,7 @@ var timeControl = {
     },
     timesUp: function () {
         clearInterval(timeControl.intID)
+        alert('Times Up!')
     }
 }
 
