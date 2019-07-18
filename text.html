@@ -1,0 +1,62 @@
+<!-- This document is only for testing the SVG element to try and wrap text -->
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>Comic Trivia Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links to Bootstrap and JQuery -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body class="container">
+    <div class="sticky-top" id="timeLord">
+        <p>Time</p>
+        <span class="rounded-circle" id="timer">99</span>
+        <p style="margin-top: 8px">Remaining</p>
+    </div>
+    <svg height="108" width="108">
+        <text x="35" y="15">Time</text>
+        <circle cx="54" cy="54" r="31" fill="blue" />
+        <text x="16" y="100">Remaining</text>
+    </svg>
+
+    <svg height="108" width="108">
+        <path id="bottomPath" fill="none" stroke="black" d="M 23 54 A 31 31, 0, 0, 0, 85 54" />
+        <path id="topPath" fill="none" stroke="black" d="M 85 54 A 31 31, 0, 0, 0, 23 54" />
+        <text width="108">
+            <textPath alignment-baseline="top" xlink:href="#topPath">
+                Top
+            </textPath>
+        </text>
+        <text width="108">
+            <textPath alignment-baseline="top" xlink:href="#bottomPath">
+                Bottom
+            </textPath>
+        </text>
+    </svg> <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- to hide the path, it is usually wrapped in a <defs> element -->
+        <!-- <defs> -->
+        <path id="MyPath" fill="none" stroke="red"
+            d="M10,90 Q90,90 90,45 Q90,10 50,10 Q10,10 10,40 Q10,70 45,70 Q70,70 75,50" />
+        <!-- </defs> -->
+
+        <text>
+            <textPath href="#MyPath">
+                Quick brown fox jumps over the lazy dog.
+            </textPath>
+        </text>
+
+    </svg>
+    <script src="assets/javascript/script.js"></script>
+</body>
+
+</html>

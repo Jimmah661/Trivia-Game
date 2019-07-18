@@ -3,7 +3,13 @@ var timeControl = {
     intID: "",
     updateTimer: function () {
         timeControl.timer--;
-        $('#timer').text("Time Remaining: " + timeControl.timer);
+
+        if (timeControl.timer <= 9) {
+            $('#timer').text("0" + timeControl.timer);
+        }
+        else {
+            $('#timer').text(timeControl.timer);
+        };
         if (timeControl.timer === 0) { timeControl.timesUp() };
     },
     timesUp: function () {
@@ -16,3 +22,7 @@ $(document).ready(function () {
     // Timer countdown code
     timeControl.intID = setInterval(timeControl.updateTimer, 1000);
 })
+
+function quizChecker() {
+    alert('Button Clicked!')
+}
