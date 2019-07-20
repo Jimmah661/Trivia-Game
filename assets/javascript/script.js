@@ -40,8 +40,15 @@ function quizChecker() {
             correctGuess++
         }
     }
-    console.log('You got ' + correctGuess + ' questions correct out of a possible 5')
-    $('#resultsDisplay').html('Congrats, you got ' + correctGuess + " questions right!")
+    if (correctGuess === 0) {
+        $('#resultsDisplay').html('Did you do this on purpose? You got them all wrong!')
+    } else if (correctGuess <= 2 && correctGuess > 0) {
+        $('#resultsDisplay').html('Bummer, you only got ' + correctGuess + ' correct. Better luck next time')
+    } else if (correctGuess > 2 && correctGuess < 5) {
+        $('#resultsDisplay').html('Congrats, you got ' + correctGuess + " questions right!")
+    } else if (correctGuess === 5) {
+        $('#resultsDisplay').html('Well done True Believer! You got them all right!')
+    }
     $('.modal').css('display', 'block')
 }
 
